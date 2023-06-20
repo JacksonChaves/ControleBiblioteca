@@ -8,16 +8,27 @@ import jakarta.servlet.http.HttpSession;
 
 public class LoginService {
 
+    UserRepository userRepository = new UserRepository();
+
     public void validateLogin(String user, String password, HttpServletRequest request) throws Exception {
+
+
+        System.out.println("call validateLogin");
+
 
         if(user == null || user.isEmpty() || password == null || password.isEmpty()){
             throw new Exception("Voce precisa preencher os campos!");
         }else{
 
-            UserRepository userRepository = new UserRepository();
 
             try{
+
                 User u = userRepository.findByUser(user);
+
+                System.out.println(u);
+
+
+
                 System.out.println("Usuario do banco: " + u.getName() + " senha do banco: " + u.getPassword());
 
                 if (user.equals(u.getName()) && password.equals(u.getPassword())){
@@ -30,7 +41,7 @@ public class LoginService {
                 }
 
             }catch (NoResultException e){
-                throw  new NoResultException("Usuario nao cadastrado no sistema!");
+                throw  new NoResultException("Usuario nao cadastrado no sistema!!!!!!!!!!!!!!!");
             }
 
 

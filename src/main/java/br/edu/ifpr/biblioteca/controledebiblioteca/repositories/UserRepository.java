@@ -17,6 +17,7 @@ public class UserRepository {
     }
 
     public User create(User user){
+
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
@@ -73,9 +74,13 @@ public class UserRepository {
     }
 
     public User findByUser(String name){
-        return entityManager.createQuery("SELECT u FROM User u WHERE u.name = :name", User.class)
+        User name1 = entityManager.createQuery("SELECT u FROM User u WHERE u.name = :name", User.class)
                 .setParameter("name", name)
                 .getSingleResult();
+
+        System.out.println(name1);
+
+        return name1;
     }
 
 }

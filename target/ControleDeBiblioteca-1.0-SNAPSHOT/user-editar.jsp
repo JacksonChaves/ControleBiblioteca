@@ -15,11 +15,15 @@
     <title>Editar</title>
 </head>
 <body>
-<form method="post" action="usereditar">
+<form method="post" action="UserEditarController">
 
     <input type="text" name="id" value="<%= user.getId() %>"/>
     <input type="text" name="name" value="<%= user.getName() %>"/>
     <input type="text" name="email" value="<%= user.getEmail() %>"/>
+    <select  name="type">
+        <option value="ADMINISTRADOR" <%= user.getType().equals("ADMINISTRADOR") ? "selected" : "" %>>ADMINISTRADOR</option>
+        <option value="USUARIO" <%= user.getType().equals("USUARIO") ? "selected" : "" %>>USUARIO</option>
+    </select>
     <button> Salvar </button>
 </form>
 

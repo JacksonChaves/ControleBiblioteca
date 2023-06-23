@@ -16,12 +16,17 @@
     <title>Editar</title>
 </head>
 <body>
-<form method="post" action="editar">
+<form method="post" action="BookEditarController?id=<%= book.getId() %>">
 
     <input type="text" name="id" value="<%= book.getId() %>"/>
     <input type="text" name="nome" value="<%= book.getNome() %>"/>
     <input type="text" name="autor" value="<%= book.getAutor() %>"/>
     <input type="text" name="date" value="<%= book.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) %>"/>
+    <select  name="status">
+        <option value="DISPONIVEL" <%= book.getStatus().equals("DISPONIVEL") ? "selected" : "" %>>DISPONIVEL</option>
+        <option value="INDISPONIVEL" <%= book.getStatus().equals("INDISPONIVEL") ? "selected" : "" %>>INDISPONIVEL</option>
+        <option value="EMPRESTADO" <%= book.getStatus().equals("EMPRESTADO") ? "selected" : "" %>>EMPRESTADO</option>
+    </select>
     <button> Salvar </button>
 </form>
 

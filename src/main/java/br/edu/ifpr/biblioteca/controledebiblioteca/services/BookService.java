@@ -59,6 +59,7 @@ public class BookService {
         String id = String.valueOf(updatedBook.getId());
         String nome = updatedBook.getNome();
         String autor = updatedBook.getAutor();
+        String status = String.valueOf(updatedBook.getStatus());
         String date = updatedBook.getDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
         if (id.isEmpty()) {
@@ -81,6 +82,7 @@ public class BookService {
         book.setNome(nome);
         book.setAutor(autor);
         book.setDate(LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+        book.setStatus(BookStatus.valueOf(status));
 
         bookRepository.update(book);
     }

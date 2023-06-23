@@ -11,7 +11,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form method="post" action="cadastrar">
+    <form method="post" action="BookCadastroController">
         <input type="text" name="nome" placeholder="Nome"/>
         <input type="text" name="autor" placeholder="Autor"/>
         <input type="text" name="date" placeholder="Data"/>

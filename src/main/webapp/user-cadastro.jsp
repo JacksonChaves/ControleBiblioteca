@@ -11,7 +11,7 @@
     <title>cadastro-user</title>
 </head>
 <body>
-<form method="post" action="usercadastrar">
+<form method="post" action="UserCadastroController">
     <input type="text" name="name" placeholder="Nome"/>
     <input type="text" name="email" placeholder="Email"/>
     <input type="password" name="password" placeholder="Password"/>

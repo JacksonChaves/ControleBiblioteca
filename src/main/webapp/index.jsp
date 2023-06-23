@@ -23,13 +23,17 @@
     </div>
 
     <div>
-        <input type="text" name="field_password" placeholder="Informe sua senha" >
+        <input type="password" name="field_password" placeholder="Informe sua senha" >
     </div>
 
     <input type="submit">
     <p> <%= msg  %> </p>
 
 </form>
+
+<%--<p>usuário default (inserido em dados iniciais)</p>--%>
+<%--<p>usuário: admin</p>--%>
+<%--<p>senha: admin</p>--%>
 
 </body>
 </html>

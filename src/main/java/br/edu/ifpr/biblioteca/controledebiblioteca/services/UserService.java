@@ -25,7 +25,7 @@ public class UserService {
         User user = new User();
         user.setName(name);
         user.setEmail(email);
-        //user.setType(UserType.Usuario);
+        user.setType(UserType.USUARIO);
         user.setPassword(password);
 
         userRepository.create(user);
@@ -55,6 +55,8 @@ public class UserService {
         String id = String.valueOf(updatedUser.getId());
         String name = updatedUser.getName();
         String email = updatedUser.getEmail();
+        String type = String.valueOf(updatedUser.getType());
+
 
         if (id.isEmpty()) {
             throw new IllegalArgumentException("ID não pode ser vazio");
@@ -75,6 +77,7 @@ public class UserService {
 
         user.setName(name);
         user.setEmail(email);
+        user.setType(UserType.valueOf(type));
         userRepository.update(user);
     }
 

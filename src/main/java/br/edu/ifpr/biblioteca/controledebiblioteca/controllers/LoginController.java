@@ -19,20 +19,15 @@ public class LoginController extends HttpServlet {
         String user = req.getParameter("field_user");
         String password = req.getParameter("field_password");
         LoginService loginService = new LoginService();
-        System.out.println("Usuario: " + user + " senha: " + password);
 
+        try {
 
-        try{
             loginService.validateLogin(user, password, req);
-            resp.sendRedirect("http://localhost:8080//ControleDeBiblioteca/BookListarController");
+            resp.sendRedirect("http://localhost:8080/ControleDeBiblioteca/BookListarController");
 
         } catch (Exception e) {
             String msg = e.getMessage();
-            resp.sendRedirect("http://localhost:8080//ControleDeBiblioteca/index.jsp?msg=" + msg);
+            resp.sendRedirect("http://localhost:8080/ControleDeBiblioteca/index.jsp?msg=" + msg);
         }
-
-
     }
-
-
 }

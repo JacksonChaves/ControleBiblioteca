@@ -9,7 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "UserCadastroController", value = {"/usercadastrar"})
+@WebServlet(name = "UserCadastroController", value = {"/UserCadastroController"})
 public class UserCadastroController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -32,7 +32,7 @@ public class UserCadastroController extends HttpServlet {
 
         System.out.println("usuário: " + user);
 
-        response.sendRedirect("http://localhost:8080/biblioteca");
+        response.sendRedirect("http://localhost:8080/ControleDeBiblioteca/BookListarController");
     }
 
 

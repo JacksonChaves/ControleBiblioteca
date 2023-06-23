@@ -74,13 +74,9 @@ public class UserRepository {
     }
 
     public User findByUser(String name){
-        User name1 = entityManager.createQuery("SELECT u FROM User u WHERE u.name = :name", User.class)
+        return entityManager.createQuery("SELECT u FROM User u WHERE u.name = :name", User.class)
                 .setParameter("name", name)
                 .getSingleResult();
-
-        System.out.println(name1);
-
-        return name1;
     }
 
 }

@@ -72,7 +72,7 @@ public class UserService {
 
         User user = userRepository.findById(Integer.parseInt(id));
         if (user == null) {
-            throw new IllegalArgumentException("Usuário não encontrado");
+            throw new IllegalArgumentException("Usuario não encontrado");
         }
 
         user.setName(name);

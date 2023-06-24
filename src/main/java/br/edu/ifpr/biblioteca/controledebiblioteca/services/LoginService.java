@@ -26,11 +26,11 @@ public class LoginService {
                 session.setAttribute("is_logged_in", true);
                 session.setAttribute("user", u);
             } else {
-                throw new Exception("usuário ou senha incorreto");
+                throw new Exception("Usuario ou senha incorreto");
             }
 
         } catch (NoResultException e){
-            throw new NoResultException("Usuario nao cadastrado no sistema!!!!!!!!!!!!!!!");
+            throw new NoResultException("Usuario nao cadastrado no sistema!");
         }
     }
 }

@@ -9,14 +9,54 @@
 <html>
 <head>
     <title>Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+    </style>
 </head>
 <body>
-    <form method="post" action="BookCadastroController">
-        <input type="text" name="nome" placeholder="Nome"/>
-        <input type="text" name="autor" placeholder="Autor"/>
-        <input type="text" name="date" placeholder="Data"/>
-        <input type="submit">
-    </form>
-
+<form method="post" action="BookCadastroController">
+    <input type="text" name="nome" placeholder="Nome"/>
+    <input type="text" name="autor" placeholder="Autor"/>
+    <input type="text" name="date" placeholder="Data"/>
+    <input type="submit" value="Salvar">
+</form>
 </body>
 </html>
+
